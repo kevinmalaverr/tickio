@@ -1,0 +1,41 @@
+.LayoutDashboard{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  .nav{
+    display: grid;
+    width: 200px;
+    grid-template-columns: 1fr 0;
+    
+    .menu-container{
+      background-color: #1f2429;
+    }
+  }
+
+  .content{
+    overflow-y: scroll;
+    background-color: rebeccapurple;
+  }
+}
+
+@media screen and (max-width:768px){
+  .LayoutDashboard{
+    grid-template-columns: 1fr;  
+
+    .nav{
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      display: none;
+      grid-template-columns: 300px 1fr;
+
+      .over-dashboard{
+        background: rgba($color: #000000, $alpha: .3);
+      }
+    }
+
+    .nav.active { display: grid; z-index: 100; }
+  }
+}
+

@@ -1,0 +1,64 @@
+.field{
+  margin-bottom: 16px;
+
+  .input-container{
+    width: 100%;
+    border: 1px solid #d5dee2;
+    border-radius: 4px;
+    margin: 0;
+    position: relative;
+ 
+    input{
+      border: none;
+      width: 100%;
+      height: 100%;
+      padding: 8px 16px;
+      border-radius: 4px;
+
+      &:focus{
+        box-shadow: inset 0px 0px 15px -8px rgba(0,0,0,0.24);
+      }
+    }
+
+    span.error-icon{
+      top: 5px;
+      right: 8px;
+      position: absolute;
+    }
+  }
+
+  p.error-message{
+    color: red;
+    text-align: left;
+    margin: 4px 0 0;
+    font-size: 12px;
+  }
+}
+
+.btn{
+  padding: 6px 8px 8px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0 -2px rgba(0,0,0,.3);
+  font-weight: 700;
+}
+
+.btn:active{ transform: scale(.9) }
+
+.btn.white{
+  background-color: white;
+  color: var(--color-main);
+}
+
+.btn.outline{
+  border: 1px solid #fff;
+  background: transparent;
+  box-shadow: none;
+  padding: 8px 8px;
+}
+
+.btn.primary{ background-color: var(--color-main) }
+
+.btn.secondary{ background-color: var(--color-main) }
+

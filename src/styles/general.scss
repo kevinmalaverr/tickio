@@ -1,0 +1,38 @@
+
+// shadows
+.shadow{
+  box-shadow: 0 1px 5px 0 rgba(60,64,67,.2);
+}
+
+.shadow-inset{
+  box-shadow: inset 0px 0px 2px -8px rgba(0,0,0,0.24);
+}
+//----------------------------------------------------------
+
+// text
+p,h1,h2,h3,h4,h5{
+  line-height: 1.2em;
+  color: #1f2429;
+}
+
+.display { font-size: var(--font-size-display) }
+.headline { font-size: var(--font-size-headline) }
+.title { font-size: var(--font-size-title) }
+.xlarge { font-size: var(--font-size-xlarge) }
+.large { font-size: var(--font-size-large) }
+.medium { font-size: var(--font-size-medium) }
+.regular { font-size: var(--font-size-regular) }
+.small { font-size: var(--font-size-small) }
+
+.w-light { font-weight: 300 }
+.w-regular { font-weight: 400 }
+.w-medium { font-weight: 500 }
+.w-bold { font-weight: 700 }
+
+//----------------------------------------------------------
+
+// margin
+.margin-b100{ margin-bottom: 8px }
+.margin-b200{ margin-bottom: 16px }
+.margin-b300{ margin-bottom: 32px }
+.margin-b400{ margin-bottom: 64px }

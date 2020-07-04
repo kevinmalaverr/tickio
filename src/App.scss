@@ -1,0 +1,15 @@
+@import './styles/reset.scss'; 
+@import './styles/vars.scss';
+@import './styles/common.scss';
+@import './styles//general.scss';
+@import './styles/iconFonts.scss';
+
+:root{
+  @extend %colors;
+  @extend %font
+}
+
+body{
+  font-family: sans-serif;
+}
+
