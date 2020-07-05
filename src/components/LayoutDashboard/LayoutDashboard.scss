@@ -10,13 +10,56 @@
     
     .menu-container{
       background-color: #1f2429;
+      color: #fff;
     }
   }
 
   .content{
     overflow-y: scroll;
-    background-color: rebeccapurple;
+    background: var(--color-grey-50);
   }
+}
+
+.dashboard__header{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 8px 16px;
+  position: sticky;
+  top: 0;
+  color: #fff;
+
+  & > div{
+    display: flex;
+    align-items: center;
+  }
+}
+
+.menu-nav-container{
+  height: 70vh;
+  overflow-y: auto;
+  background: #262d35;
+  
+
+  h1{
+    color: #fff;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}
+
+.menu-header{
+  padding: 16px;
+}
+
+.menu-logo{
+  width: 80px;
+  margin: auto;
 }
 
 @media screen and (max-width:768px){

@@ -6,7 +6,7 @@ import App from './App';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import firebaseConfig from '../firebaseConfig'
+import firebaseConfig from './firebaseConfig'
 
 firebase.initializeApp(firebaseConfig)
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)

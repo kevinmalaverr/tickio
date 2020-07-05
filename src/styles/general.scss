@@ -1,7 +1,7 @@
 
 // shadows
 .shadow{
-  box-shadow: 0 1px 5px 0 rgba(60,64,67,.2);
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);;
 }
 
 .shadow-inset{
@@ -29,6 +29,8 @@ p,h1,h2,h3,h4,h5{
 .w-medium { font-weight: 500 }
 .w-bold { font-weight: 700 }
 
+.color100{ color: rgba($color: #1f2429, $alpha: .7);}
+
 //----------------------------------------------------------
 
 // margin
@@ -36,3 +38,30 @@ p,h1,h2,h3,h4,h5{
 .margin-b200{ margin-bottom: 16px }
 .margin-b300{ margin-bottom: 32px }
 .margin-b400{ margin-bottom: 64px }
+
+.margin-r100{ margin-right: 8px }
+.margin-r200{ margin-right: 16px }
+.margin-r300{ margin-right: 32px }
+.margin-r400{ margin-right: 64px }
+
+
+
+// button container
+
+.btn-container{
+  background: none;
+  border: none;
+}
+
+// gradients 
+.gradient{
+  background: linear-gradient(30deg,var(--color-main),var(--color-second));
+}
+
+.image{
+  width: 100%;
+}
+
+.c-white{
+  color: #fff;
+}

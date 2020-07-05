@@ -1,6 +1,13 @@
 .EventCard{
   background: #fff;
-  border: 1px solid #999;
-  width: 400px;
-  height: 300px;
+  height: 200px;
+  border-radius: 16px;
+  padding: 16px;
+  cursor: pointer;
+
+  &:hover{ background: #f8f8f8}
+}
+
+.EventCard:hover h2 {
+  color: var(--color-second);
 }

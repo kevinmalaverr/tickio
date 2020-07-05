@@ -1,0 +1,13 @@
+.container{
+  width: 100%;
+  max-width: 800px;
+  padding: 16px;
+  margin: auto;
+}
+
+.event-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));;
+  gap: 16px;
+}
+
