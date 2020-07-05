@@ -17,7 +17,7 @@ const Menu = ({children}) => {
     <>
       <div id="menu-back" className="menu-back" onClick={handleClose}/>
       <button className="menu-icon" onClick={handleOpen}>
-      <i class="icon-menu"/>  
+        <i class="icon-menu"/>  
       </button>
       <div id="menu" className="menu">
         <div className="menu__head">
