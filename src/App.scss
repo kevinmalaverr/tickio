@@ -3,6 +3,7 @@
 @import './styles/common.scss';
 @import './styles//general.scss';
 @import './styles/iconFonts.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 :root{
   @extend %colors;
@@ -10,6 +11,10 @@
 }
 
 body{
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color:  #1f2429;
 }
 
+hr{
+  margin: 48px 0;
+}

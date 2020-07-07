@@ -3,6 +3,7 @@
   max-width: 800px;
   padding: 16px;
   margin: auto;
+  margin-top: -250px;
 }
 
 .event-list{
@@ -11,3 +12,10 @@
   gap: 16px;
 }
 
+.bg-image{
+  height: 300px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}

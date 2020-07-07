@@ -1,0 +1,21 @@
+
+.Modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  .Modal-container{
+    top: 50px;
+    position: absolute;
+    background: #fff;
+    width: 90%;
+  }
+
+  .Modal-background{
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.5);
+  }
+}

@@ -6,8 +6,10 @@
   cursor: pointer;
 
   &:hover{ background: #f8f8f8}
+  &.center{text-align: center; padding-top: 50px;}
 }
 
 .EventCard:hover h2 {
   color: var(--color-second);
 }
+
