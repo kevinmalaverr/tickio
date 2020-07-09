@@ -17,8 +17,8 @@ const ProfilePhoto = props => {
       on
       onClick={handleClick}>
       <img src={image} alt=""/>
+      <EmergentCard active={sign}/>
     </div>
-    <EmergentCard className="b-radius" active={sign}/>
     </>
   )
 }

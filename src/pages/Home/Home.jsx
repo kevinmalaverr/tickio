@@ -59,9 +59,14 @@ const Home = props => {
         <div className="diagonal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" fill="white"><polygon points="100 0 100 10 0 10"></polygon></svg></div>
       </div>
     </div>
+    <button className="btn">Login</button>
+    <button className="btn btn-out">Login</button>
+    <button className="btn" disabled>Login</button>
+    <button className="btn btn-out" disabled>Login</button>
+    <input className="checkbox" type='checkbox' name='edad' value='20-39' />
     <Footer></Footer>
 
-    <p>textooo</p>
+    <p className="light">textooo</p>
   </>
 )}
 

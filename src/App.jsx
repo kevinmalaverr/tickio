@@ -2,10 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import './App.scss'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { NotFound } from 'pages'
-
-// import { Home} from 'pages'
-// import {Login} from 'pages'
-// import {LayoutDashboard} from 'components'
+import { Loader } from 'components'
 
 const Home = lazy(() => import('pages/Home/Home'))
 const Login = lazy(() => import('pages/Login/Login'))
@@ -19,6 +16,7 @@ const App = () => (
         <Route exact path="/login" component={Login}/>
         <Route path="/dashboard" component={LayoutDashboard}/>
         <Route exact path="/event/:id" component={Home}/>
+        <Route path="/loader" component={Loader}/>
         <Route component={NotFound}/>
       </Switch>
     </Suspense>

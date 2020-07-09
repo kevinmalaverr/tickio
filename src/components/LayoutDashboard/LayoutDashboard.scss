@@ -9,8 +9,7 @@
     grid-template-columns: 1fr 0;
     
     .menu-container{
-      background-color: #1f2429;
-      color: #fff;
+      background-color: #fff;
     }
   }
 
@@ -26,6 +25,7 @@
   padding: 8px 16px;
   position: sticky;
   top: 0;
+  background: var(--color-dark);
   color: #fff;
 
   & > div{
@@ -34,10 +34,13 @@
   }
 }
 
+.image-logo{
+  height: 20px;
+}
+
 .menu-nav-container{
   height: 70vh;
   overflow-y: auto;
-  background: #262d35;
   
 
   h1{
@@ -48,9 +51,16 @@
     width: 3px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
+    background-color: rgba($color: #000, $alpha: .2);
+    border-radius: 2px;
   }
+}
+
+.footer-dashboard{
+  padding: 36px 16px;
+  display: flex;
+  justify-content: center;
+  color: var(--color-grey);
 }
 
 .menu-header{

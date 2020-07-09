@@ -8,7 +8,12 @@ const Modal = (props) => {
 
   let el = document.createElement('div')
   el.classList.add('Modal')
-  el.appendChild(document.createElement('div', {id:'modalContainer'}))
+  const $cont = document.createElement('div')
+  $cont.classList.add('Modal-container')
+  const $bg = document.createElement('div')
+  $bg.classList.add('Modal-background')
+  el.appendChild($cont)
+  el.appendChild($bg)
 
   useEffect(() => {
     $modalRoot.appendChild(el)
@@ -20,7 +25,7 @@ const Modal = (props) => {
 
   return ReactDOM.createPortal(
     props.children,
-    el
+    $cont
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const EmergentCard = ({active, className}) => {
   return (
-    <div className={`EmergentCard ${className} ${active?'active':''}`}>
+    <div className={`EmergentCard shadow ${className} ${active?'active':''}`}>
       
     </div>
   )

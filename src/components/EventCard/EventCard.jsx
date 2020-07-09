@@ -13,8 +13,16 @@ const EventCard = (props) => {
 
   return ( 
     <div className="EventCard shadow" onClick={handleClick}>
-      <h2 className="medium">nombre Evento</h2>
-      <p className="regular color100">idprojecto</p>
+      <div className="title">
+        <h2 className="f-regular">nombre Evento</h2>
+        <p className="f-small c-light">idprojecto</p>
+      </div>
+      <div className="details">
+
+      </div>
+      <div className="status">
+        <p className="c-green w-bold f-small">Published</p>
+      </div>
     </div>
   )
 }

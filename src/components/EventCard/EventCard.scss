@@ -1,15 +1,16 @@
 .EventCard{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   background: #fff;
-  height: 200px;
-  border-radius: 16px;
-  padding: 16px;
+  height: 160px;
+  border-radius: 10px;
+  padding: 24px;
   cursor: pointer;
 
   &:hover{ background: #f8f8f8}
-  &.center{text-align: center; padding-top: 50px;}
-}
+  &.center{text-align: center; padding-top: 46px;}
 
-.EventCard:hover h2 {
-  color: var(--color-second);
+  .status{
+    
+  }
 }
-

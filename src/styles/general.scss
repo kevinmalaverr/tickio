@@ -1,36 +1,32 @@
-
 // shadows
-.shadow{
-  box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);;
-}
+.shadow{ box-shadow: 0 3px 6px 0 rgba(44, 40, 40, 0.11) }
+.shadow-b{ box-shadow: 0 2px 4px 0 rgba(23, 23, 23, 0.18)}
 
-.shadow-inset{
-  box-shadow: inset 0px 0px 2px -8px rgba(0,0,0,0.24);
-}
 //----------------------------------------------------------
 
 // text
-p,h1,h2,h3,h4,h5{
-  line-height: 1.2em;
-}
+p,h1,h2,h3,h4,h5{ line-height: 1.2em; font-weight: normal}
 
-.display { font-size: var(--font-size-display) }
-.headline { font-size: var(--font-size-headline) }
-.title { font-size: var(--font-size-title) }
-.xlarge { font-size: var(--font-size-xlarge) }
-.large { font-size: var(--font-size-large) }
-.medium { font-size: var(--font-size-medium) }
-.regular { font-size: var(--font-size-regular) }
-.small { font-size: var(--font-size-small) }
+.f-display { font-size: var(--font-size-display); font-weight: bold}
+.f-headline { font-size: var(--font-size-headline); font-weight: bold}
+.f-title { font-size: var(--font-size-title)}
+.f-header { font-size: var(--font-size-header)}
+.f-large { font-size: var(--font-size-large)}
+.f-regular { font-size: var(--font-size-regular)}
+.f-small { font-size: var(--font-size-small)}
 
 .w-light { font-weight: 300 }
 .w-regular { font-weight: 400 }
 .w-medium { font-weight: 500 }
 .w-bold { font-weight: 700 }
 
-.color100{ color: rgba($color: #1f2429, $alpha: .7);}
-
+.c-light{ color: var(--color-grey) }
+.c-main{ color: var(--color-main) }
+.c-second{ color: var(--color-second) }
+.c-green { color: var(--color-green)}
+.c-white{ color: #fff }
 //----------------------------------------------------------
+
 
 // margin
 .margin-b100{ margin-bottom: 8px }
@@ -43,26 +39,17 @@ p,h1,h2,h3,h4,h5{
 .margin-r300{ margin-right: 32px }
 .margin-r400{ margin-right: 64px }
 
-
+.margin-l100{ margin-left: 8px }
+.margin-l200{ margin-left: 16px }
+.margin-l300{ margin-left: 32px }
+.margin-l400{ margin-left: 64px }
+//-----------------------------------------------------------
 
 // button container
-
-.btn-container{
-  background: none;
-  border: none;
-}
 
 // gradients 
 .gradient{
   background: linear-gradient(30deg,var(--color-main),var(--color-second));
-}
-
-.image{
-  width: 100%;
-}
-
-.c-white{
-  color: #fff;
 }
 
 .relative{
