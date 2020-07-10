@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { useState } from 'react'
 
 const Field = (props) => {
 
-  const {id, type, error, placeHolder, defaultValue, handle} = props
+  const {id, type, error, placeHolder, defaultValue, handle, children} = props
 
   const handleChange = event =>{
     if(handle){
@@ -12,16 +12,23 @@ const Field = (props) => {
   }
 
   return (
-    <div className="field">
-      <div className={`input-container ${error ? 'error' : ''}`}>
-        <label class="active" for="first_name2">First Name</label>
-        <input id="first_name2" className="validate" id="email" type={type} placeholder={placeHolder} value={defaultValue} onChange={handleChange}/>
-        {error 
-        ? <span className="error-icon">x</span> 
-        : null}
-      </div>
-      <p className='error-message'>{error}</p>
+    <div className="field-container">
+      <div className="field shadow">
+      {children 
+        ? <div className="field__icon">
+          {children}
+        </div>
+        : null
+      }
+      
+      <input type={type} placeholder={placeHolder}/>
+      <i className="material-icons">error</i>
     </div>
+    {/* <div className="error-message f-small">
+      Invalid email
+    </div> */}
+  </div>
+    
   )
 }
 

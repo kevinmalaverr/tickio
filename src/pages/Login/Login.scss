@@ -1,6 +1,6 @@
 .login{
   height: 100vh;
-  background: #f9f9f9;
+  background: var(--color-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,11 +23,11 @@
 }
 
 .form-container{
-  background: #fff;
-  padding: 20px;
+  background: #f7fafc;
+  padding: 36px;
   border: 1px solid #d5dee2;
   border-radius: 8px;
-  width: 300px;
+  width: 480px;
 
   button{
     width: 100%;
@@ -49,7 +49,7 @@ form{
 .google-signing-button{
   display: flex;
   align-items: center;
-  padding: 8px 12px;
+  padding: 12px 12px;
   border:  1px solid #d5dee2;
   background: #fff;
   border-radius: 4px;

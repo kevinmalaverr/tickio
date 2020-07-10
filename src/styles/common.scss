@@ -1,38 +1,61 @@
 // field
+
+.field-container{
+  margin-bottom: 36px;
+
+  .error-message{
+    color: var(--color-red);
+    position: absolute;
+  }
+}
+
+
+
 .field{
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+  height: 50px;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  background: #fff;
+  padding: 0 16px;
+  flex-wrap: wrap;
+  transition: 1s;
 
-  .input-container{
-    width: 100%;
-    border: 1px solid #d5dee2;
-    border-radius: 4px;
-    margin: 0;
-    position: relative;
- 
-    input{
-      border: none;
-      width: 100%;
-      height: 100%;
-      padding: 8px 16px;
-      border-radius: 4px;
-
-      &:focus{
-        box-shadow: inset 0px 0px 15px -8px rgba(0,0,0,0.24);
-      }
-    }
-
-    span.error-icon{
-      top: 5px;
-      right: 8px;
-      position: absolute;
-    }
+  &:focus-within{
+    border: 1px solid var(--color-main);
   }
 
-  p.error-message{
-    color: red;
-    text-align: left;
-    margin: 4px 0 0;
-    font-size: 12px;
+  input{
+    border: none;
+    height: 100%;
+    padding: 0;
+    width: 1fr;
+    flex: 1 0 auto;
+  }
+
+  ::placeholder{
+    color: var(--color-dark);
+  }
+
+  .field__icon{
+    margin-right: 16px;
+  }
+
+  &.error{
+    border: 1px solid var(--color-red);
+
+    input{
+      color: var(--color-red);
+    }
+
+    &>i{
+      color: var(--color-red);
+    }
+    
+    ::placeholder{
+      color: var(--color-red);
+    }
   }
 }
 
@@ -59,8 +82,6 @@
 .EmergentCard{
   display: none;
   position: absolute;
-  width: 300px;
-  height: 300px;
   background-color: #fff;
   top: 54px;
   right: -36px;
@@ -93,7 +114,6 @@
   align-items: center;
   justify-content: center;
   padding: 0 16px;
-  min-width: 185px;
   color: white;
   font-size: 18px;
   font-weight: 300;

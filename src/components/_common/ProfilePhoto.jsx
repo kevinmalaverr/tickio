@@ -17,7 +17,11 @@ const ProfilePhoto = props => {
       on
       onClick={handleClick}>
       <img src={image} alt=""/>
-      <EmergentCard active={sign}/>
+      <EmergentCard active={sign}>
+        
+        <img src={image} alt=""/>
+        <h1>hoñla</h1>
+      </EmergentCard>
     </div>
     </>
   )
