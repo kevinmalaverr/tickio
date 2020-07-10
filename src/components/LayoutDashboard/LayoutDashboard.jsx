@@ -26,7 +26,7 @@ const LayoutDashboard = (props) => {
           <Route exact path='/dashboard/:id/' component={Home} />
           <Route exact path='/dashboard/:id/' component={Home} />
         </Switch>
-        <footer className="footer-dashboard">
+        <footer className="footer-dashboard f-small">
           <p>created by <a target="blank" href="https://kevinmalaver.work">kevin</a></p>
         </footer>
       </div>

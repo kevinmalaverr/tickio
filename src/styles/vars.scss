@@ -5,18 +5,19 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-  --font-size-display: 40px;
-  --font-size-headline: 35px;
-  --font-size-title: 28px;
-  --font-size-header: 25px;
-  --font-size-large: 18px;
-  --font-size-regular:16px;
-  --font-size-small: 13px;
+  --font-size-display: 4rem;
+  --font-size-headline: 3.5rem;
+  --font-size-title: 2.8rem;
+  --font-size-header: 2.5rem;
+  --font-size-large: 1.8px;
+  --font-size-regular:1.6rem;
+  --font-size-small: 1.3rem;
 }
 
 // colors
 %colors{
   --color-main: #7764e4;
+  --color-main-active: #8f80e6;
   --color-second: #11cdef;
   --color-bg: #f1f3f9;
   --color-grey: #8898aa;
