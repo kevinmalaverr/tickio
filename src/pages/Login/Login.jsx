@@ -16,12 +16,6 @@ const Login = (props) => {
   let auth = Autentication.getInstance();
 
   useEffect(() => {
-    // auth.createAcountEmailPass(
-    //   "kevinmalaverr@gmail.com",
-    //   "kevin2208",
-    //   "kevin malaver"
-    // );
-
     auth.listen((user) => {
       if (user) {
         setIsUser(true);

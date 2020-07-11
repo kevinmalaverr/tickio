@@ -199,3 +199,34 @@ hr {
   height: 20px;
   cursor: pointer;
 }
+
+// profile options
+
+.profile-options {
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 4px;
+  flex-flow: column;
+  color: var(--color-dark);
+  img {
+    width: 50px;
+  }
+}
+
+.profile-options__list {
+  color: var(--color-dark);
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  button {
+    padding: 1.2rem;
+    border-top: 1px solid #f1f3f9;
+    width: 100%;
+  }
+  button:hover {
+    color: var(--color-second);
+  }
+}

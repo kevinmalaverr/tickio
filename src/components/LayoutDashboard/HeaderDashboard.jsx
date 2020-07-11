@@ -1,28 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ProfilePhoto } from "components/_common";
 import { logo } from "images";
-import { user_photo } from "images";
-import Autentication from "utils/auth/autentication";
+import { default_user_photo } from "images";
 
 const HeaderDashboard = (props) => {
-  const [user, setUser] = useState(false);
-
-  useEffect(() => {
-    const auth = Autentication.getInstance();
-    auth.listen((user) => {
-      if (user) {
-        setUser(user);
-        console.log(user);
-      } else {
-        setUser(false);
-      }
-    });
-
-    return () => {
-      setUser(false);
-    };
-  }, []);
+  const { user } = props;
 
   const compare = () => {
     return props.history.location.pathname === "/dashboard";
@@ -55,7 +38,11 @@ const HeaderDashboard = (props) => {
         <button className="btn-container margin-r100 large">
           <i className="material-icons">notifications</i>
         </button>
-        <ProfilePhoto image={user_photo} />
+        <ProfilePhoto
+          image={user.photoURL ? user.photoURL : default_user_photo}
+          userName={user.displayName}
+          email={user.email}
+        />
         <p className="f-small w-light margin-l100">{user.displayName}</p>
       </div>
     </div>

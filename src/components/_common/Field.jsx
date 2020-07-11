@@ -28,6 +28,7 @@ const Field = (props) => {
           onChange={handleChange}
           type={type}
           placeholder={placeholder}
+          value={defaultValue}
         />
 
         {error ? <i className="material-icons">error</i> : null}

@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 100%;
   max-width: 800px;
   padding: 16px;
@@ -6,17 +6,25 @@
   margin-top: -200px;
 }
 
-.event-list{
+.event-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
 }
 
-.bg-image{
+.bg-image {
   height: 300px;
   width: 100%;
   top: 0;
   right: 0;
   z-index: 0;
   background-color: var(--color-dark);
+}
+
+.create-new-event {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  padding: 24px;
 }

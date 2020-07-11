@@ -1,5 +1,5 @@
 //fonts
-%font{
+%font {
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -9,21 +9,21 @@
   --font-size-headline: 3.5rem;
   --font-size-title: 2.8rem;
   --font-size-header: 2.5rem;
-  --font-size-large: 1.8px;
-  --font-size-regular:1.6rem;
+  --font-size-large: 1.8rem;
+  --font-size-regular: 1.6rem;
   --font-size-small: 1.3rem;
 }
 
 // colors
-%colors{
+%colors {
   --color-main: #7764e4;
   --color-main-active: #8f80e6;
   --color-second: #11cdef;
   --color-bg: #f1f3f9;
   --color-grey: #8898aa;
   --color-dark: #172b4d;
-  --color-red:#f53c56;
-  --color-orange:#f39c12;
-  --color-blue:#3498db;
-  --color-green:#44b922;
+  --color-red: #f53c56;
+  --color-orange: #f39c12;
+  --color-blue: #3498db;
+  --color-green: #44b922;
 }
