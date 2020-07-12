@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./LayoutDashboard.scss";
 import { Switch, Route } from "react-router-dom";
-import { Dashboard } from "pages";
+import { Dashboard, EventHome } from "pages";
 import { Home } from "pages";
 import MenuDashboard from "./MenuDashboard";
 import HeaderDashboard from "./HeaderDashboard";
@@ -38,12 +38,9 @@ const LayoutDashboard = (props) => {
         {user ? (
           <Switch>
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/dashboard/:id/" component={Home} />
-            <Route exact path="/dashboard/:id/" component={Home} />
+            <Route exact path="/dashboard/:id/" component={EventHome} />
           </Switch>
-        ) : (
-          <Loader />
-        )}
+        ) : null}
         <footer className="footer-dashboard f-small">
           <p>
             created by{" "}

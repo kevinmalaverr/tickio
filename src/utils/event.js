@@ -18,7 +18,8 @@ class Event {
       .doc(uid)
       .collection("user_events")
       .add({
-        eventId: eid,
+        eventID: eid,
+        eventTitle: title,
       })
       .catch((e) => console.error(e));
   }

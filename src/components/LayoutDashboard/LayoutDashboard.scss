@@ -1,25 +1,25 @@
-.LayoutDashboard{
+.LayoutDashboard {
   height: 100vh;
   display: grid;
   grid-template-columns: auto 1fr;
 
-  .nav{
+  .nav {
     display: grid;
     width: 200px;
     grid-template-columns: 1fr 0;
-    
-    .menu-container{
+
+    .menu-container {
       background-color: #fff;
     }
   }
 
-  .content{
+  .content {
     overflow-y: scroll;
     background: var(--color-grey-50);
   }
 }
 
-.dashboard__header{
+.dashboard__header {
   display: grid;
   grid-template-columns: auto 1fr auto;
   padding: 8px 16px;
@@ -28,22 +28,21 @@
   background: var(--color-dark);
   color: #fff;
 
-  & > div{
+  & > div {
     display: flex;
     align-items: center;
   }
 }
 
-.image-logo{
+.image-logo {
   height: 20px;
 }
 
-.menu-nav-container{
+.menu-nav-container {
   height: 70vh;
   overflow-y: auto;
-  
 
-  h1{
+  h1 {
     color: #fff;
   }
 
@@ -51,44 +50,44 @@
     width: 3px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: rgba($color: #000, $alpha: .2);
+    background-color: rgba($color: #000, $alpha: 0.2);
     border-radius: 2px;
   }
 }
 
-.footer-dashboard{
+.footer-dashboard {
   padding: 36px 16px;
   display: flex;
   justify-content: center;
   color: var(--color-grey);
 }
 
-.menu-header{
+.menu-header {
   padding: 16px;
 }
 
-.menu-logo{
+.menu-logo {
   width: 80px;
   margin: auto;
 }
 
-@media screen and (max-width:768px){
-  .LayoutDashboard{
-    grid-template-columns: 1fr;  
-
-    .nav{
+@media screen and (max-width: 768px) {
+  .LayoutDashboard {
+    .nav {
       position: fixed;
       height: 100vh;
       width: 100%;
       display: none;
       grid-template-columns: 300px 1fr;
 
-      .over-dashboard{
-        background: rgba($color: #000000, $alpha: .3);
+      .over-dashboard {
+        background: rgba($color: #000000, $alpha: 0.3);
       }
     }
 
-    .nav.active { display: grid; z-index: 100; }
+    .nav.active {
+      display: grid;
+      z-index: 100;
+    }
   }
 }
-

@@ -1,26 +1,28 @@
-import React, { Suspense, lazy } from 'react'
-import './App.scss'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { NotFound } from 'pages'
-import { Loader } from 'components'
+import React, { Suspense, lazy } from "react";
+import "./App.scss";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { NotFound, EventHome } from "pages";
+import { Loader } from "components";
 
-const Home = lazy(() => import('pages/Home/Home'))
-const Login = lazy(() => import('pages/Login/Login'))
-const LayoutDashboard  = lazy(() => import('components/LayoutDashboard/LayoutDashboard'))
+const Home = lazy(() => import("pages/Home/Home"));
+const Login = lazy(() => import("pages/Login/Login"));
+const LayoutDashboard = lazy(() =>
+  import("components/LayoutDashboard/LayoutDashboard")
+);
 
 const App = () => (
   <BrowserRouter>
     <Suspense fallback={<div>loading...</div>}>
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/login" component={Login}/>
-        <Route path="/dashboard" component={LayoutDashboard}/>
-        <Route exact path="/event/:id" component={Home}/>
-        <Route path="/loader" component={Loader}/>
-        <Route component={NotFound}/>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route path="/dashboard" component={LayoutDashboard} />
+        <Route exact path="/event/:id" component={EventHome} />
+        <Route path="/loader" component={Loader} />
+        <Route component={NotFound} />
       </Switch>
     </Suspense>
   </BrowserRouter>
-)
+);
 
-export default App
+export default App;

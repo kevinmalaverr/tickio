@@ -1,30 +1,24 @@
-import React from 'react'
-import './EventCard.scss'
-import Event  from 'utils/event'
+import React from "react";
+import "./EventCard.scss";
+import { Link } from "react-router-dom";
 
 const EventCard = (props) => {
-  const { event } = props
-  const handleClick = () =>{
-    // const event = new Event()
-    // event.createEvent('56df54dv5f', 'pruebaaa', 'desde pureba')
-    // .then(resp => console.log('evento creado'))
-    // .catch(e => console.error(e))
-  }
+  const { event } = props;
 
-  return ( 
-    <div className="EventCard shadow" onClick={handleClick}>
-      <div className="title">
-        <h2 className="f-regular">nombre Evento</h2>
-        <p className="f-small c-light">idprojecto</p>
+  return (
+    <Link to={`dashboard/${event.eventID}`}>
+      <div className="EventCard shadow">
+        <div className="title">
+          <h2 className="f-regular">{event.eventTitle}</h2>
+          <p className="f-small c-light">{event.eventID}</p>
+        </div>
+        <div className="details"></div>
+        <div className="status">
+          <p className="c-green w-bold f-small">Published</p>
+        </div>
       </div>
-      <div className="details">
+    </Link>
+  );
+};
 
-      </div>
-      <div className="status">
-        <p className="c-green w-bold f-small">Published</p>
-      </div>
-    </div>
-  )
-}
-
-export default EventCard
+export default EventCard;

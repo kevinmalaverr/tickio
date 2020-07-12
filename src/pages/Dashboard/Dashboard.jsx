@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./Dashboard.scss";
 import { EventCard } from "components";
@@ -12,21 +12,21 @@ import CreateNewEvent from "./CreateNewEvent";
 
 const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
+  const [eventList, setEventList] = useState([]);
 
-  const list = [0, 1, 6, 7, 5, 1, 1, 3];
+  useEffect(() => {
+    const user = firebase.auth().currentUser;
+    const event = new Event();
+    event.getEvents(user.uid).then((list) => setEventList(list));
+
+    return () => {
+      setEventList([]);
+    };
+  }, []);
 
   const createNewEvent = () => {
     setShowModal(true);
   };
-
-  const get = async () => {
-    const user = await firebase.auth().currentUser;
-    const event = new Event();
-    const li = await event.getEvents(user.uid);
-    console.log(li);
-  };
-
-  get();
 
   return (
     <div>
@@ -48,9 +48,11 @@ const Dashboard = () => {
             <p className="f-title">+</p>
             <h2 className="f-regular">Add new event</h2>
           </div>
-          {list.map((item) => {
-            return <EventCard />;
-          })}
+          {eventList
+            ? eventList.map((item) => {
+                return <EventCard event={item} />;
+              })
+            : null}
         </div>
       </div>
     </div>
