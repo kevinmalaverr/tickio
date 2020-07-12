@@ -7,7 +7,8 @@ class Event {
   }
 
   async createEvent(uid, title, eid) {
-    const refDoc = await this.db.collection("events").doc(eid).set({
+    const ref = this.db.collection("events").doc(eid);
+    const refDoc = await ref.set({
       uid: uid,
       title: title,
       date: firebase.firestore.FieldValue.serverTimestamp(),
@@ -38,6 +39,14 @@ class Event {
       });
 
     return list;
+  }
+
+  async checkIfExist(eid) {
+    const doc = await this.db.collection("events").doc(eid).get();
+    if (doc.exists) {
+      return true;
+    }
+    return false;
   }
 }
 

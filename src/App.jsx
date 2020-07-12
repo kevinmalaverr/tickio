@@ -10,6 +10,8 @@ const LayoutDashboard = lazy(() =>
   import("components/LayoutDashboard/LayoutDashboard")
 );
 
+const FormEvent = lazy(() => import("pages/FormEvent/FormEvent"));
+
 const App = () => (
   <BrowserRouter>
     <Suspense fallback={<div>loading...</div>}>
@@ -17,7 +19,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route path="/dashboard" component={LayoutDashboard} />
-        <Route exact path="/event/:id" component={EventHome} />
+        <Route exact path="/event/:id" component={FormEvent} />
         <Route path="/loader" component={Loader} />
         <Route component={NotFound} />
       </Switch>

@@ -3,6 +3,7 @@ import { Field } from "components/_common";
 import Event from "utils/event";
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import { generateEventId, safeForEventName } from "utils/generateEventId";
 
 const CreateNewEvent = () => {
   const [eventName, setEventName] = useState("");
@@ -10,23 +11,34 @@ const CreateNewEvent = () => {
   const [error, setError] = useState("");
   const [ready, setReady] = useState(false);
 
-  const handleForm = (input) => {
+  const handleForm = async (input) => {
     setEventName(input);
     if (input.length === 0) {
       setError("");
-    } else if (input.length >= 4) {
-      setReady(true);
-      setError("");
-    } else {
-      setError("the name should has at least of 4 chars");
+      return;
+    }
+
+    const validation = safeForEventName(input);
+    if (validation.error) {
+      setError(validation.message);
       setReady(false);
+    } else {
+      let eid = validation.message;
+      const event = new Event();
+      const exist = await event.checkIfExist(eid);
+      if (exist) {
+        eid = generateEventId(eid);
+      }
+      setEventID(eid);
+      setError("");
+      setReady(true);
     }
   };
 
   const create = () => {
-    const event = new Event();
     const user = firebase.auth().currentUser;
-    event.createEvent(user.uid, eventName, eventName);
+    const event = new Event();
+    event.createEvent(user.uid, eventName, eventID);
   };
 
   return (
@@ -44,7 +56,7 @@ const CreateNewEvent = () => {
       </form>
 
       <p className="f-large c-light w-light margin-b300">
-        Project ID: {eventName}
+        Project ID: {eventID}
       </p>
       <div>
         <button className="btn" onClick={create} disabled={!ready}>
