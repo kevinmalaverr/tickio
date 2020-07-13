@@ -7,22 +7,22 @@ class Event {
   }
 
   async createEvent(uid, title, eid) {
-    const ref = this.db.collection("events").doc(eid);
-    const refDoc = await ref.set({
-      uid: uid,
-      title: title,
-      date: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    try {
+      //create new doc into the events
+      this.db.collection("events").doc(eid).set({
+        uid: uid,
+        title: title,
+        date: firebase.firestore.FieldValue.serverTimestamp(),
+      });
 
-    this.db
-      .collection("users")
-      .doc(uid)
-      .collection("user_events")
-      .add({
+      // create a doc into the user's events
+      this.db.collection("users").doc(uid).collection("user_events").add({
         eventID: eid,
         eventTitle: title,
-      })
-      .catch((e) => console.error(e));
+      });
+    } catch (e) {
+      return e;
+    }
   }
 
   async getEvents(uid) {

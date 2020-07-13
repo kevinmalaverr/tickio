@@ -4,12 +4,14 @@ import Event from "utils/event";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import { generateEventId, safeForEventName } from "utils/generateEventId";
+import { useHistory } from "react-router-dom";
 
-const CreateNewEvent = () => {
+const CreateNewEvent = (props) => {
   const [eventName, setEventName] = useState("");
   const [eventID, setEventID] = useState("");
   const [error, setError] = useState("");
   const [ready, setReady] = useState(false);
+  let history = useHistory();
 
   const handleForm = async (input) => {
     setEventName(input);
@@ -35,10 +37,13 @@ const CreateNewEvent = () => {
     }
   };
 
-  const create = () => {
+  const create = async () => {
     const user = firebase.auth().currentUser;
     const event = new Event();
-    event.createEvent(user.uid, eventName, eventID);
+    let error = await event.createEvent(user.uid, eventName, eventID);
+    if (!error) {
+      history.push(`/dashboard/${eventID}`);
+    }
   };
 
   return (
