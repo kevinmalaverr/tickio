@@ -136,3 +136,9 @@ h5 {
 .gradient {
   background: linear-gradient(0deg, var(--color-main), var(--color-second));
 }
+
+// align
+.align {
+  display: flex;
+  align-items: center;
+}

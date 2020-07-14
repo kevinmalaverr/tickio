@@ -10,6 +10,7 @@ const Field = (props) => {
     defaultValue,
     handle,
     children,
+    textarea,
   } = props;
 
   const handleChange = (event) => {
@@ -20,16 +21,30 @@ const Field = (props) => {
 
   return (
     <div className="field-container">
-      <div className={`field shadow ${error ? "error" : null}`}>
+      <div
+        className={`field shadow ${error ? "error" : null} ${
+          textarea ? "text-area" : null
+        }`}
+      >
         {children ? <div className="field__icon">{children}</div> : null}
 
-        <input
-          id={id}
-          onChange={handleChange}
-          type={type}
-          placeholder={placeholder}
-          value={defaultValue}
-        />
+        {textarea ? (
+          <textarea
+            id={id}
+            onChange={handleChange}
+            placeholder={placeholder}
+            value={defaultValue}
+            rows="5"
+          ></textarea>
+        ) : (
+          <input
+            id={id}
+            onChange={handleChange}
+            type={type}
+            placeholder={placeholder}
+            value={defaultValue}
+          />
+        )}
 
         {error ? <i className="material-icons">error</i> : null}
       </div>

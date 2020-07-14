@@ -131,7 +131,7 @@ const Login = (props) => {
             </Field>
           </form>
           <Button color="primary" click={handleClick}>
-            Sign in
+            Sign In
           </Button>
         </div>
       ) : (

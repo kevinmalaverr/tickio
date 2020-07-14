@@ -7,6 +7,7 @@
     display: grid;
     width: 200px;
     grid-template-columns: 1fr 0;
+    z-index: 200;
 
     .menu-container {
       background-color: #fff;
@@ -27,6 +28,7 @@
   top: 0;
   background: var(--color-dark);
   color: #fff;
+  z-index: 100;
 
   & > div {
     display: flex;
@@ -94,7 +96,7 @@
 @media screen and (max-width: 768px) {
   .LayoutDashboard {
     grid-template-columns: 1fr;
-    grid-template-rows: 0 auto;
+    grid-template-rows: auto auto;
 
     .nav {
       position: fixed;
@@ -110,7 +112,6 @@
 
     .nav.active {
       display: grid;
-      z-index: 100;
     }
   }
   .btn-menu {

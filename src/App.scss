@@ -66,6 +66,12 @@ hr {
   padding: 0 16px;
   flex-wrap: wrap;
   border: 1px solid transparent;
+  width: 100%;
+
+  &.text-area {
+    height: 10rem;
+    padding: 16px;
+  }
 
   &:focus-within {
     border: 1px solid var(--color-main);
@@ -78,12 +84,15 @@ hr {
     margin-right: 16px;
   }
 
-  input {
+  input,
+  textarea {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     border: none;
     height: 100%;
     padding: 0;
     width: 1fr;
     flex: 1 0 auto;
+    resize: none;
   }
 
   &.error {
@@ -131,7 +140,7 @@ hr {
   top: 54px;
   right: -36px;
   border-radius: 8px;
-  z-index: 50;
+  z-index: 10;
 
   &::before {
     content: "";
@@ -155,7 +164,7 @@ hr {
   background: var(--color-main);
   border: none;
   border-radius: 4px;
-  height: 50px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,7 +207,7 @@ hr {
   cursor: pointer;
 }
 
-// profile options
+// profile options ======================================
 
 .profile-options {
   min-width: 200px;
@@ -244,7 +253,9 @@ hr {
     right: 8px;
   }
 }
+// =======================================================
 
+// selector ======================================
 .selector {
   display: flex;
   align-items: center;
@@ -279,16 +290,21 @@ hr {
     right: 2px;
   }
 }
+//==================================================
 
-//inputs
+// regular inputs ===========================================
+
+.regular-form {
+  width: 100%;
+}
 
 input.regular-form {
   border: none;
-  border-bottom: 2px solid var(--color-dark);
+  border-bottom: 1px solid var(--color-dark);
   font-size: var(--font-size-regular);
 
   &:focus {
-    border-bottom: 2px solid var(--color-second);
+    border-bottom: 1px solid var(--color-second);
   }
 
   &:disabled {
@@ -296,3 +312,24 @@ input.regular-form {
     border-bottom: 2px solid var(--color-grey);
   }
 }
+
+textarea.regular-form {
+  resize: none;
+  font-family: "Roboto";
+  border: 1px solid var(--color-dark);
+  font-size: var(--font-size-regular);
+  border-radius: 5px;
+
+  &:focus {
+    border: 1px solid var(--color-second);
+  }
+}
+
+.form-area {
+  margin-bottom: 24px;
+  p {
+    margin-bottom: 4px;
+  }
+}
+
+//================================================================

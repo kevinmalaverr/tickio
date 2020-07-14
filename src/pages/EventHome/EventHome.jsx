@@ -37,7 +37,7 @@ const EventHome = (props) => {
             <h1 className="f-title">EVENTO</h1>
             <h2 className="f-large">Published</h2>
           </div>
-          <div className="content-card b-radius">
+          <div className="content-card shadow b-radius">
             <h1>Your Event isn't Published</h1>
             <Link to="">
               <button className="btn">Go to Config</button>

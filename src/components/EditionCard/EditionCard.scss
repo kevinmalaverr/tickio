@@ -1,0 +1,16 @@
+.EditionCard {
+  background: #fff;
+  padding: 0 16px;
+}
+
+.EditionCard__header {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  justify-content: space-between;
+  border-bottom: 1px solid #dddddd;
+}
+
+.EditionCard__content {
+  padding: 16px 0;
+}
