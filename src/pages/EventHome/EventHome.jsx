@@ -3,6 +3,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import * as firebase from "firebase/app";
 import "firebase/firebase-firestore";
+import "./EventHome.scss";
+import { Field } from "components/_common";
+import { Link } from "react-router-dom";
 
 const EventHome = (props) => {
   const [event, setEvent] = useState(null);
@@ -26,13 +29,23 @@ const EventHome = (props) => {
   }, []);
 
   return (
-    <div>
-      {event ? (
-        <div>
-          <h1>{event.title}</h1>
-          <h1>{event.uid}</h1>
+    <div className="EventHome">
+      <div className="back"></div>
+      <div className="EventHome-container">
+        <div className="EventHome-content">
+          <div className="event-name">
+            <h1 className="f-title">EVENTO</h1>
+            <h2 className="f-large">Published</h2>
+          </div>
+          <div className="content-card b-radius">
+            <h1>Your Event isn't Published</h1>
+            <Link to="">
+              <button className="btn">Go to Config</button>
+            </Link>
+          </div>
+          <hr />
         </div>
-      ) : null}
+      </div>
     </div>
   );
 };

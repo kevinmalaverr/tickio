@@ -2,6 +2,7 @@ import React from "react";
 import EmergentCard from "./EmergentCard";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Autentication from "utils/auth/autentication";
 
 const ProfilePhoto = (props) => {
   const { image, userName, email } = props;
@@ -10,6 +11,11 @@ const ProfilePhoto = (props) => {
   const handleClick = () => {
     console.log("click");
     setSign(sign ? false : true);
+  };
+
+  const logout = () => {
+    const auth = Autentication.getInstance();
+    auth.signOut();
   };
 
   return (
@@ -23,7 +29,7 @@ const ProfilePhoto = (props) => {
             <p className="c-light w-light margin-b300">{email}</p>
             <ul className="profile-options__list">
               <button>Account settings</button>
-              <button>LogOut</button>
+              <button onClick={logout}>LogOut</button>
             </ul>
           </div>
         </EmergentCard>

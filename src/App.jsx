@@ -18,7 +18,8 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
-        <Route path="/dashboard" component={LayoutDashboard} />
+        <Route path="/dashboard/:id" component={LayoutDashboard} />
+        <Route path="/dashboard/" component={LayoutDashboard} />
         <Route exact path="/event/:id" component={FormEvent} />
         <Route path="/loader" component={Loader} />
         <Route component={NotFound} />

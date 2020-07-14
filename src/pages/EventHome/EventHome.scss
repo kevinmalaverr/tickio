@@ -1,0 +1,40 @@
+.EventHome {
+  position: relative;
+  top: 0;
+}
+
+.back {
+  background: var(--color-dark);
+  height: 300px;
+  z-index: -1;
+}
+
+.EventHome-container {
+  margin-top: -200px;
+  width: 100%;
+  padding: 24px;
+}
+
+.EventHome-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.event-name {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 50px;
+
+  h1,
+  h2 {
+    margin: 0;
+    margin-right: 16px;
+    line-height: 0;
+  }
+}
+
+.content-card {
+  background: #fff;
+  padding: 16px;
+}

@@ -23,10 +23,7 @@ const HeaderDashboard = (props) => {
             <img className="image-logo" src={logo}></img>
           </Link>
         ) : (
-          <button
-            onClick={handleMenu}
-            className="btn-container margin-r100 large"
-          >
+          <button onClick={handleMenu} className="btn-menu margin-r100 large">
             <i className="material-icons">menu</i>
           </button>
         )}

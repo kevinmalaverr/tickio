@@ -6,7 +6,7 @@ const EventCard = (props) => {
   const { event } = props;
 
   return (
-    <Link to={`dashboard/${event.eventID}`}>
+    <Link to={`/dashboard/${event.eventID}`}>
       <div className="EventCard shadow">
         <div className="title">
           <h2 className="f-regular">{event.eventTitle}</h2>

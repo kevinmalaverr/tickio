@@ -42,10 +42,6 @@
   height: 70vh;
   overflow-y: auto;
 
-  h1 {
-    color: #fff;
-  }
-
   &::-webkit-scrollbar {
     width: 3px;
   }
@@ -62,23 +58,50 @@
   color: var(--color-grey);
 }
 
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  width: 100%;
+
+  &:hover {
+    background: var(--color-white-hover);
+  }
+
+  i {
+    margin-right: 16px;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+}
+
 .menu-header {
   padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-logo {
   width: 80px;
-  margin: auto;
+}
+
+.btn-menu {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
   .LayoutDashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0 auto;
+
     .nav {
       position: fixed;
       height: 100vh;
       width: 100%;
       display: none;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 200px 1fr;
 
       .over-dashboard {
         background: rgba($color: #000000, $alpha: 0.3);
@@ -89,5 +112,8 @@
       display: grid;
       z-index: 100;
     }
+  }
+  .btn-menu {
+    display: inline;
   }
 }
