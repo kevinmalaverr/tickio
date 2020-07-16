@@ -11,6 +11,7 @@ const Field = (props) => {
     handle,
     children,
     textarea,
+    disabled,
   } = props;
 
   const handleChange = (event) => {
@@ -35,6 +36,7 @@ const Field = (props) => {
             placeholder={placeholder}
             value={defaultValue}
             rows="5"
+            disabled={disabled}
           ></textarea>
         ) : (
           <input
@@ -43,6 +45,7 @@ const Field = (props) => {
             type={type}
             placeholder={placeholder}
             value={defaultValue}
+            disabled={disabled}
           />
         )}
 

@@ -56,6 +56,10 @@ hr {
   }
 }
 
+input[type="text"] {
+  width: 0;
+}
+
 .field {
   margin-bottom: 0.8rem;
   height: 5rem;
@@ -93,6 +97,10 @@ hr {
     width: 1fr;
     flex: 1 0 auto;
     resize: none;
+
+    &:disabled {
+      background: #fff;
+    }
   }
 
   &.error {
@@ -293,43 +301,5 @@ hr {
 //==================================================
 
 // regular inputs ===========================================
-
-.regular-form {
-  width: 100%;
-}
-
-input.regular-form {
-  border: none;
-  border-bottom: 1px solid var(--color-dark);
-  font-size: var(--font-size-regular);
-
-  &:focus {
-    border-bottom: 1px solid var(--color-second);
-  }
-
-  &:disabled {
-    background: none;
-    border-bottom: 2px solid var(--color-grey);
-  }
-}
-
-textarea.regular-form {
-  resize: none;
-  font-family: "Roboto";
-  border: 1px solid var(--color-dark);
-  font-size: var(--font-size-regular);
-  border-radius: 5px;
-
-  &:focus {
-    border: 1px solid var(--color-second);
-  }
-}
-
-.form-area {
-  margin-bottom: 24px;
-  p {
-    margin-bottom: 4px;
-  }
-}
 
 //================================================================

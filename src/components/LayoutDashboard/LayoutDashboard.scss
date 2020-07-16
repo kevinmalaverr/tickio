@@ -96,7 +96,7 @@
 @media screen and (max-width: 768px) {
   .LayoutDashboard {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;
 
     .nav {
       position: fixed;

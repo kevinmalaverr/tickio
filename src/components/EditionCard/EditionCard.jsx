@@ -17,7 +17,13 @@ const EditionCard = (props) => {
             >
               cancel
             </button>
-            <button onClick={() => save()} className="btn">
+            <button
+              onClick={() => {
+                save();
+                setOnedit(false);
+              }}
+              className="btn"
+            >
               Save
             </button>
           </div>
