@@ -1,6 +1,7 @@
 import * as firebase from "firebase/app";
 import "firebase/firebase-firestore";
 import "firebase/firebase-storage";
+import Requirements from "pages/EventPreferences/Requirements";
 
 export function editApperance() {}
 
@@ -16,7 +17,7 @@ export async function setPreferences(eid) {
     .collection("preferences")
     .doc(eid)
     .set({
-      apperance: {
+      appearance: {
         title: "tit",
         description: "des",
       },
@@ -28,10 +29,17 @@ export async function setPreferences(eid) {
     });
 }
 
-export function setPreferencesAppearance(eid, apperance) {
+export function setPreferencesAppearance(eid, appearance) {
   const db = firebase.firestore();
   db.collection("preferences").doc(eid).update({
-    apperance: apperance,
+    appearance: appearance,
+  });
+}
+
+export function setPreferencesRequirements(eid, requirements) {
+  const db = firebase.firestore();
+  db.collection("preferences").doc(eid).update({
+    requirements: requirements,
   });
 }
 

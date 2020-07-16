@@ -1,7 +1,7 @@
 import React from "react";
 
 const Selector = (props) => {
-  const { id, state, getState, label } = props;
+  const { id, state, getState, label, disabled } = props;
 
   const change = (event) => {
     getState(event);
@@ -11,8 +11,10 @@ const Selector = (props) => {
     <div className="selector">
       <div
         id={id}
-        onClick={change}
-        className={`selector-icon ${state ? "on" : ""}`}
+        onClick={disabled ? null : change}
+        className={`selector-icon ${state ? "on" : ""}  ${
+          disabled ? "disabled" : ""
+        }`}
       />
       <p className="selector-label">{label}</p>
     </div>

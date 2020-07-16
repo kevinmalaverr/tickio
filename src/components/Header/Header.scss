@@ -1,21 +1,21 @@
-header{
+header {
   height: 64px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  
-  .header__container{
+
+  .header__container {
     padding: 0 50px;
     display: flex;
     align-items: center;
     height: 34px;
     width: 100%;
-    
-    img{
+
+    img {
       height: 24px;
     }
 
-    .menu-container{
+    .menu-container {
       margin-left: auto;
       display: grid;
       grid-auto-flow: column;
@@ -24,22 +24,17 @@ header{
   }
 }
 
-.buttons{
+.buttons {
   display: flex;
   align-items: center;
 }
 
-@media screen and (max-width:768px){
-
-  header{
-    height: 50px;
-  }
-
-  header .header__container{
+@media screen and (max-width: 768px) {
+  header .header__container {
     padding: 0 24px;
   }
 
-  .buttons{
+  .buttons {
     grid-column-start: 1;
   }
 }

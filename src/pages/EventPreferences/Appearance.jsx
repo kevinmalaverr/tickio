@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { EditionCard } from "components";
 import { Field } from "components/_common";
 import { setPreferencesAppearance, uploadImage } from "utils/editEvent";
+import { useEffect } from "react";
 
 const Appearance = (props) => {
   const [editApperance, setEditApperance] = useState(false);
-  const [form, setForm] = useState({});
-  const [image, setImage] = useState("");
+  const [form, setForm] = useState(props.data);
+  const [image, setImage] = useState(form.imageURL);
 
   const edit = () => {
     setPreferencesAppearance(props.eid, form);

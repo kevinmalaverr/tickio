@@ -1,34 +1,34 @@
 import React from "react";
-import './Header.scss'
-import { Link } from 'react-router-dom'
-import {logo_negative} from 'images'
-import { Menu } from 'components'
-import { Button } from 'components/_common'
+import "./Header.scss";
+import { Link } from "react-router-dom";
+import { logo } from "images";
+import { Menu } from "components";
 
-
-const Header = ({uName}) => {
- 
-  return(
+const Header = () => {
+  return (
     <header>
       <div className="header__container">
         <Link to="/">
-          <img src={logo_negative} alt=""/>
+          <img src={logo} alt="Tickio logo" />
         </Link>
         <div className="menu-container">
           <Menu>
-            <li>Plans</li>
-            <li>About</li>
+            <a href="#how-to-use">
+              <li>How to use</li>
+            </a>
+            <a href="">
+              <li>Plans</li>
+            </a>
           </Menu>
           <div className="buttons">
-            {uName
-              ? <span>hi, {uName}</span>
-              : <Link to="/login"><Button color="white">Go to Dashboard</Button></Link>
-            }
+            <Link to="/login">
+              <button className="btn btn-white">Dashboard</button>
+            </Link>
           </div>
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

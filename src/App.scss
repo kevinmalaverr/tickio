@@ -207,6 +207,11 @@ input[type="text"] {
     }
   }
 }
+
+.btn-white {
+  background: white;
+  color: var(--color-main);
+}
 // ===================================================
 
 .checkbox {
@@ -297,6 +302,11 @@ input[type="text"] {
     left: auto;
     right: 2px;
   }
+}
+
+.selector-icon.disabled {
+  background: #777;
+  cursor: default;
 }
 //==================================================
 

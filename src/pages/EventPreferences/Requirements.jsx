@@ -1,41 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { EditionCard } from "components";
 import { Selector } from "components/_common";
+import { setPreferencesRequirements } from "utils/editEvent";
 
-const Requirements = () => {
-  const [requirements, setRequirements] = useState({});
-  const handleRequirements = (event) => {
-    console.log(event.target.id);
-    setRequirements({
-      ...requirements,
-      [event.target.id]: requirements[event.target.id] ? false : true,
+const Requirements = (props) => {
+  const [onEdit, setOnEdit] = useState(false);
+  const [form, setForm] = useState(props.data);
+
+  const edit = () => {
+    setPreferencesRequirements(props.eid, form);
+  };
+
+  const handleForm = (event) => {
+    setForm({
+      ...form,
+      [event.target.id]: form[event.target.id] ? false : true,
     });
   };
 
   return (
     <EditionCard
       title="Requirements"
-      onedit={requirements}
-      setOnedit={setRequirements}
+      onedit={onEdit}
+      setOnedit={setOnEdit}
+      save={edit}
     >
-      <form action="">
+      <form>
         <Selector
           id="names"
           label="Names"
-          state={requirements.names}
-          getState={handleRequirements}
+          state={form.names}
+          getState={handleForm}
+          disabled={!onEdit}
         ></Selector>
         <Selector
           id="email"
           label="Email"
-          state={requirements.email}
-          getState={handleRequirements}
+          state={form.email}
+          getState={handleForm}
+          disabled={!onEdit}
         ></Selector>
         <Selector
           id="phone"
           label="Phone number"
-          state={requirements.phone}
-          getState={handleRequirements}
+          state={form.phone}
+          getState={handleForm}
+          disabled={!onEdit}
         ></Selector>
       </form>
     </EditionCard>
