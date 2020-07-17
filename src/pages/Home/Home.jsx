@@ -1,23 +1,21 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { logo_dark } from "images";
 import "./Home.scss";
 import { Header } from "components";
+import { Field } from "components/_common";
 
 function animarElementos(elementos) {
   window.addEventListener("scroll", function () {
-    for (let element in elementos) {
-      // obtenemos la posicion del elemento con referencia a la parte superios el TOP
+    console.log(elementos);
+    for (let i = 0; i < elementos.length; i++) {
+      let element = elementos[i];
       let posicion = element.getBoundingClientRect().top;
-      // obtenemos el tamaño de la pantalla y la dividimos entre un numero --> este numero nos sirve para que la animacion se haga antes o despues dependiendo de como lo quieres
       let tamañoPantalla = window.innerHeight / 1.3;
-      // traemon el nombre de la animacion, es una forma de hacerlo, tambien se puede hacer con la misma clase o crear otra
-      let nameAnimation = element.getAttribute("name-style");
 
-      //
       if (posicion < tamañoPantalla) {
-        element.style.animation = `animate-active 1.5s ease-out forwards`;
-      } else {
-        element.style.animation = "";
+        console.log("now");
+        element.style.animation = `fadeIn .5s ease-out forwards`;
       }
     }
   });
@@ -25,7 +23,7 @@ function animarElementos(elementos) {
 
 const Home = (props) => {
   useEffect(() => {
-    const els = document.getElementsByClassName("section");
+    const els = document.getElementsByClassName("home-section");
     console.log(els);
     animarElementos(els);
 
@@ -34,76 +32,100 @@ const Home = (props) => {
 
   return (
     <>
-      <div className="home">
-        <div className="landing  margin-b400">
-          <Header></Header>
-          <div className="hero">
-            <div className="hero-container">
-              <div>
-                <div className="hero-title margin-b200">
-                  <h1 className="headline">
-                    The easiest way to reserve for your events
-                  </h1>
-                </div>
-                <div className="hero-description margin-b200">
-                  <p className="f-large w-light">
-                    - create forms for your events <br />
-                    - generate custom tickets <br />- another feature
-                  </p>
-                </div>
-                <div className="hero-button">
-                  <Link to="/login">
-                    <button className="btn btn-white">Start now</button>
-                  </Link>
-                </div>
-              </div>
-              <div className="hero-video">
-                <iframe
-                  title="How to use Tickio"
-                  className="video"
-                  src="https://www.youtube.com/embed/FnOPA0Rz8hM"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
+      <Header />
+      <div className="hero">
+        <div className="hero__container">
+          <div className="hero__text">
+            <h1>Tickio is system where you can adminstrate </h1>
+          </div>
+          <div className="hero__button">
+            <button className="btn">Try Now</button>
+          </div>
+          <div className="hero__video">
+            <iframe
+              src="https://www.youtube.com/embed/uwzAEwzUI8k"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
-        <section id="how-to-use" className="how-to-use section">
-          <div className="wrapper">
-            <h1 className="f-headline margin-b300">How to use</h1>
-            <div className="steps">
-              <div className="steps-card shadow">
-                <div className="image-icon a margin-b300">
-                  <i className="material-icons">add</i>
-                </div>
-                <h2 className="f-large w-bold margin-b100">Create a Event</h2>
-                <p>select a name for your event, only need to be registered</p>
+        <div className="hero__bg"></div>
+      </div>
+      <div id="how-to-use" className="section-container">
+        <section className="home-section">
+          <h1 className="f-title margin-b400">HOW TO USE</h1>
+          <div className="cards">
+            <div className="card-step b-radius shadow">
+              <div className="image-icon a margin-b200">
+                <i className="material-icons">search</i>
               </div>
-              <div className="steps-card shadow">
-                <div className="image-icon b margin-b300">
-                  <i className="material-icons">create</i>
-                </div>
-                <h2 className="f-large w-bold margin-b100">Edit your Event</h2>
-                <p>select a name for your event, only need to be registered</p>
+              <h2 className="f-large w-bold margin-b100">start</h2>
+              <p>do more</p>
+            </div>
+            <div className="card-step b-radius shadow">
+              <div className="image-icon b margin-b200">
+                <i className="material-icons">search</i>
               </div>
-              <div className="steps-card shadow">
-                <div className="image-icon c margin-b300">
-                  <i className="material-icons">person_search</i>
-                </div>
-                <h2 className="f-large w-bold margin-b100">View who will go</h2>
-                <p>select a name for your event, only need to be registered</p>
+              <h2 className="f-large w-bold margin-b100">start</h2>
+              <p>do more</p>
+            </div>
+            <div className="card-step b-radius shadow">
+              <div className="image-icon c margin-b200">
+                <i className="material-icons">search</i>
               </div>
+              <h2 className="f-large w-bold margin-b100">start</h2>
+              <p>do more</p>
             </div>
           </div>
         </section>
       </div>
+      <div id="about" className="section-container">
+        <svg
+          className="wave"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,256L60,256C120,256,240,256,360,234.7C480,213,600,171,720,149.3C840,128,960,128,1080,133.3C1200,139,1320,149,1380,154.7L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+          ></path>
+        </svg>
+        <section className="home-section">
+          <h1 className="f-title">ABOUT</h1>
+        </section>
+      </div>
+      <div id="contact" className="section-container">
+        <svg
+          className="wave"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#f1f3f9"
+            fill-opacity="1"
+            d="M0,320L60,272C120,224,240,128,360,106.7C480,85,600,139,720,144C840,149,960,107,1080,80C1200,53,1320,43,1380,37.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+          ></path>
+        </svg>
+        <section className="home-section">
+          <h1 className="f-title margin-b300">CONTACT</h1>
 
-      <footer className="footer">
-        <div className="footer__bottom">
-          <p className="f-small">© Tickio 2020.</p>
+          <form action="" className="contact-form">
+            <Field placeholder="email" />
+            <Field placeholder="subject" />
+            <Field placeholder="description" textarea />
+            <button className="btn">Send</button>
+          </form>
+        </section>
+      </div>
+      <footer>
+        <div className="footer-logo">
+          <img src={logo_dark} alt="" />
         </div>
+        <p className="f-small w-light">Made with ❤ by kevin</p>
       </footer>
     </>
   );

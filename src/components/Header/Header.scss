@@ -3,6 +3,8 @@ header {
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  background: var(--color-dark);
+  color: #fff;
 
   .header__container {
     padding: 0 50px;

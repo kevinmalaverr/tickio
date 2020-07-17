@@ -1,13 +1,18 @@
-.menu{
-  nav{
+.menu {
+  margin: 0;
+  display: flex;
+  height: 34px;
+  align-items: center;
+  z-index: 999;
+  nav {
     margin-left: auto;
     display: flex;
     align-items: center;
 
-    ul{
+    ul {
       display: flex;
 
-      li{
+      li {
         list-style: none;
         margin-left: 16px;
       }
@@ -15,7 +20,7 @@
   }
 }
 
-.menu-icon{
+.menu-icon {
   background: none;
   border: none;
   display: none;
@@ -24,20 +29,12 @@
   font-size: 30px;
 }
 
-.menu__close{
+.menu__close {
   display: none;
 }
 
-.menu{
-  margin: 0;
-  display: flex;
-  height: 34px;
-  align-items: center;
-}
-
-@media screen and (max-width:768px){
-
-  .menu{
+@media screen and (max-width: 768px) {
+  .menu {
     display: none;
     position: fixed;
     height: 100vh;
@@ -47,22 +44,20 @@
     right: 0;
     width: 280px;
     opacity: 0;
-    box-shadow: 0 10px 50px rgba(27,31,35,.3);
-    z-index: 10;
+    box-shadow: 0 10px 50px rgba(27, 31, 35, 0.3);
     color: #444d56;
-
 
     nav {
       margin: 0;
       padding: 0 16px;
 
-      ul{
+      ul {
         display: block;
         margin: 0;
         padding: 0;
         width: 100%;
-        
-        li{
+
+        li {
           padding: 16px 4px;
           border-bottom: 1px solid #e1e4e8;
           width: 100%;
@@ -72,39 +67,38 @@
     }
   }
 
-  .menu.left{
+  .menu.left {
     right: auto;
     left: 0;
   }
 
-  .menu.active nav ul li{
+  .menu.active nav ul li {
     margin: 0;
   }
 
-  .menu.active{
+  .menu.active {
     display: block;
     opacity: 1;
-  } 
+  }
 
-  .menu-icon{
+  .menu-icon {
     display: flex;
     align-items: center;
     fill: #fff;
     padding: 0;
     border: none;
-
   }
 
-  .menu-back{
+  .menu-back {
     display: none;
     opacity: 0;
     transition: 1s;
   }
 
-  .menu-back.active{
+  .menu-back.active {
     opacity: 1;
     display: block;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 9;
     position: fixed;
     top: 0;
@@ -112,7 +106,7 @@
     right: 0;
     left: 0;
   }
-  .menu__close{
+  .menu__close {
     background-color: transparent;
     border: none;
     fill: #586069;
@@ -120,7 +114,7 @@
     font-size: 20px;
   }
 
-  .menu__head{
+  .menu__head {
     border-bottom: 1px solid #e1e4e8;
     height: 50px;
     display: flex;
@@ -129,5 +123,4 @@
     justify-content: flex-end;
     padding-right: 16px;
   }
-
 }

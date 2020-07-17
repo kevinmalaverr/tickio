@@ -16,8 +16,11 @@ const Header = () => {
             <a href="#how-to-use">
               <li>How to use</li>
             </a>
-            <a href="">
-              <li>Plans</li>
+            <a href="#about">
+              <li>About</li>
+            </a>
+            <a href="#contact">
+              <li>Contact</li>
             </a>
           </Menu>
           <div className="buttons">

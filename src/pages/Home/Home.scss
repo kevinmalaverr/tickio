@@ -1,131 +1,179 @@
-.landing {
-  height: auto;
+.hero {
+  min-height: 70vh;
   background: var(--color-dark);
-  color: white;
-  overflow: hidden;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
-.hero-video {
-  display: flex;
-  justify-content: center;
+.hero__container {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1000px;
+  grid-template: 1fr auto / 1fr 1fr;
+  grid-template-areas: "text video" "button video";
+  z-index: 10;
 }
 
-.video {
+.hero__text {
+  grid-area: text;
+}
+
+.hero__bg {
   width: 100%;
-  height: 250px;
-  border-radius: 5px;
+  height: 100px;
+  position: absolute;
+  bottom: -90px;
+  left: 0;
+  background-image: url("../../images/wave.svg");
+  background-repeat: no-repeat;
+  z-index: 5;
 }
 
-.hero {
-  min-height: 70vh;
-  padding: 36px;
+.hero__button {
+  grid-area: button;
+}
+
+.hero__video {
+  grid-area: video;
+
+  iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+  }
+}
+
+.wave {
+  width: 100%;
+  left: 0;
+  height: 100px;
+  position: absolute;
+  top: 0;
+}
+
+.section-container {
+  min-height: 90vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero-container {
-  display: grid;
-  max-width: 1000px;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.section-container:nth-child(2n + 1) {
+  background: #fff;
 }
 
-.how-to-use {
+.home-section {
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+
   h1 {
     text-align: center;
   }
 }
 
-.wrapper {
-  max-width: 1000px;
-  margin: auto;
-  padding: 16px;
-}
-
-.steps {
+// how to use Section ======================
+.cards {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  justify-items: center;
 }
 
-.steps-card {
-  padding: 36px 24px;
-  background: #fff;
-  border-radius: 10px;
-  position: relative;
+.card-step {
+  padding: 24px;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
 }
 
 .image-icon {
   width: 50px;
   height: 50px;
-  color: #fff;
-
+  background: red;
+  color: white;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   border-radius: 50%;
-
-  &.c {
-    background: var(--color-orange);
-  }
-  &.b {
-    background: var(--color-blue);
-  }
-  &.a {
-    background: var(--color-red);
-  }
 }
 
-footer.footer {
-  .footer__bottom {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-  }
+.image-icon.a {
+  background: var(--color-blue);
 }
 
-.animate-active {
-  animation: fadeIn;
-  animation-duration: 0.3s;
+.image-icon.b {
+  background: var(--color-red);
+}
+
+.image-icon.c {
+  background: var(--color-green);
+}
+
+footer {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.footer-logo {
+  width: 80px;
+  margin: 8px;
+  img {
+    fill: red;
+  }
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
+    transform: translateY(50px);
   }
-  100% {
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @media screen and (max-width: 768px) {
-  .hero-container {
+  .hero__container {
     grid-template-columns: 1fr;
-    max-width: 500px;
-    gap: 28px;
+    grid-template-areas: "text" "video" "button";
   }
 
-  .hero-button {
+  .hero__button {
     .btn {
       width: 100%;
     }
   }
 
-  .hero-video {
-    .video {
-      width: 100%;
-    }
+  .home-section {
+    max-width: 600px;
   }
 
-  .steps {
+  .cards {
     grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: auto;
   }
 }
