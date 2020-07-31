@@ -6,7 +6,7 @@ import "firebase/firebase-firestore";
 import "./EventHome.scss";
 import { Field } from "components/_common";
 import { Link } from "react-router-dom";
-import { Store } from "state/store";
+import { Store } from "reducer";
 
 const EventHome = (props) => {
   const [event, setEvent] = useState({});

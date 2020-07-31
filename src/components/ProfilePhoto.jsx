@@ -2,7 +2,7 @@ import React from "react";
 import EmergentCard from "./EmergentCard";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Autentication from "utils/auth/autentication";
+import Autentication from "utils/firebase-functions/autentication";
 
 const ProfilePhoto = (props) => {
   const { image, userName, email } = props;

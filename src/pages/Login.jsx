@@ -5,7 +5,7 @@ import { logo } from "images";
 import { Button } from "components/_common";
 import { Field } from "components/_common";
 import validator from "validator";
-import Autentication from "utils/auth/autentication";
+import Autentication from "utils/firebase-functions/autentication";
 
 console.log("login page");
 

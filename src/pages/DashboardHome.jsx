@@ -8,7 +8,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import Event from "utils/event";
 
-import CreateNewEvent from "./CreateNewEvent";
+import CreateNewEvent from "../components/CreateNewEvent";
 
 const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);

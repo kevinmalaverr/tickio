@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { EditionCard } from "components";
 import { Field } from "components/_common";
-import { setPreferencesAppearance, uploadImage } from "utils/editEvent";
+import {
+  setPreferencesAppearance,
+  uploadImage,
+} from "utils/firebase-functions/editEvent";
 import { useEffect } from "react";
 
 const Appearance = (props) => {

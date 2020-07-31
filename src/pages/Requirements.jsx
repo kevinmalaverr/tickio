@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { EditionCard } from "components";
 import { Selector } from "components/_common";
-import { setPreferencesRequirements } from "utils/editEvent";
+import { setPreferencesRequirements } from "utils/firebase-functions/editEvent";
 
 const Requirements = (props) => {
   const [onEdit, setOnEdit] = useState(false);

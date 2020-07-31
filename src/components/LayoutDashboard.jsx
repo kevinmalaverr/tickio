@@ -5,10 +5,10 @@ import { Switch, Route } from "react-router-dom";
 import { Dashboard, EventHome, NotFound } from "pages";
 import MenuDashboard from "./MenuDashboard";
 import HeaderDashboard from "./HeaderDashboard";
-import Autentication from "utils/auth/autentication";
+import Autentication from "utils/firebase-functions/autentication";
 import EventPreferences from "pages/EventPreferences/EventPreferences";
 
-import { Store, reducer, defStore } from "state/store";
+import { Store, reducer, defStore } from "reducer";
 
 const LayoutDashboard = (props) => {
   const [user, setUser] = useState(false);

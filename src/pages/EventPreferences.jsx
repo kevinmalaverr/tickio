@@ -4,7 +4,10 @@ import { EditionCard, Loader } from "components";
 import "./EventPreferences.scss";
 import Appearance from "./Appearance";
 import Requirements from "./Requirements";
-import { getPreferences, setPreferences } from "utils/editEvent";
+import {
+  getPreferences,
+  setPreferences,
+} from "utils/firebase-functions/editEvent";
 
 const EventPreferences = (props) => {
   const [data, setData] = useState({});

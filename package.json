@@ -15,7 +15,6 @@
     "react-scripts": "3.4.1",
     "sass": "^1.26.8",
     "sass-loader": "^8.0.2",
-    "styled-components": "^5.1.1",
     "validator": "^13.1.1"
   },
   "scripts": {
