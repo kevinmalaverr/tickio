@@ -48,7 +48,7 @@ class Autentication {
         .auth()
         .createUserWithEmailAndPassword(email, password);
       result.user.updateProfile({ displayName: names });
-      const configuracion = { url: "http://localhost:3000/hola" };
+      const configuracion = { url: "http://tickio.web.app/login" };
 
       result.user.sendEmailVerification(configuracion).catch((error) => {
         console.error(error);

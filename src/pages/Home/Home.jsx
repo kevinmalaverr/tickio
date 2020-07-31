@@ -36,10 +36,15 @@ const Home = (props) => {
       <div className="hero">
         <div className="hero__container">
           <div className="hero__text">
-            <h1>Tickio is system where you can adminstrate </h1>
+            <h1>
+              An easy way to create forms and manage who will attend your
+              events.
+            </h1>
           </div>
           <div className="hero__button">
-            <button className="btn">Try Now</button>
+            <Link to="/register">
+              <button className="btn">Try it Now</button>
+            </Link>
           </div>
           <div className="hero__video">
             <iframe
@@ -60,15 +65,18 @@ const Home = (props) => {
               <div className="image-icon a margin-b200">
                 <i className="material-icons">search</i>
               </div>
-              <h2 className="f-large w-bold margin-b100">start</h2>
-              <p>do more</p>
+              <h2 className="f-large w-bold margin-b100">Create an Event</h2>
+              <p>Choose the name of your event, only need to be registered</p>
             </div>
             <div className="card-step b-radius shadow">
               <div className="image-icon b margin-b200">
                 <i className="material-icons">search</i>
               </div>
-              <h2 className="f-large w-bold margin-b100">start</h2>
-              <p>do more</p>
+              <h2 className="f-large w-bold margin-b100">Personalize</h2>
+              <p>
+                Config the date, number of invitates, requirements, etc. an
+                published it
+              </p>
             </div>
             <div className="card-step b-radius shadow">
               <div className="image-icon c margin-b200">
@@ -121,7 +129,7 @@ const Home = (props) => {
           </form>
         </section>
       </div>
-      <footer>
+      <footer className="footer">
         <div className="footer-logo">
           <img src={logo_dark} alt="" />
         </div>
