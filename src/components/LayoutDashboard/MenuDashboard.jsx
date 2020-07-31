@@ -17,7 +17,7 @@ const MenuDashboard = (props) => {
               <img className="image fill-main" src={logo_dark} alt="" />
             </Link>
           </div>
-          <button>
+          <button className="menu-close-icon" onClick={handleMenu}>
             <i className="material-icons">close</i>
           </button>
         </div>

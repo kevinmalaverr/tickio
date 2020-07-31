@@ -93,6 +93,10 @@
   display: none;
 }
 
+.menu-close-icon {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .LayoutDashboard {
     grid-template-columns: 1fr;
@@ -116,5 +120,9 @@
   }
   .btn-menu {
     display: inline;
+  }
+
+  .menu-close-icon {
+    display: block;
   }
 }

@@ -26,7 +26,11 @@ body {
 }
 
 #root {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+#modal-root {
+  z-index: 999999;
 }
 
 button,

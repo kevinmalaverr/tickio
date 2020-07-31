@@ -1,16 +1,25 @@
 import React from "react";
 import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import * as firebase from "firebase/app";
 import "firebase/firebase-firestore";
 import "./EventHome.scss";
 import { Field } from "components/_common";
 import { Link } from "react-router-dom";
+import { Store } from "state/store";
 
 const EventHome = (props) => {
-  const [event, setEvent] = useState(null);
+  const [event, setEvent] = useState({});
+  const { state, dispatch } = useContext(Store);
+  console.log(state);
 
   useEffect(() => {
+    dispatch({
+      type: "SET_USER",
+      value: {
+        displayName: "kevin a m",
+      },
+    });
     const id = props.match.params.id;
     console.log(id);
     const db = firebase.firestore();
@@ -34,12 +43,12 @@ const EventHome = (props) => {
       <div className="EventHome-container">
         <div className="EventHome-content">
           <div className="event-name">
-            <h1 className="f-title">EVENTO</h1>
-            <h2 className="f-large">Published</h2>
+            <h1 className="f-title">{event.title}</h1>
+            <h2 className="f-large">{event.status}</h2>
           </div>
           <div className="content-card shadow b-radius">
             <h1>Your Event isn't Published</h1>
-            <Link to="">
+            <Link to={`/dashboard/${props.match.params.id}/preferences`}>
               <button className="btn">Go to Config</button>
             </Link>
           </div>
