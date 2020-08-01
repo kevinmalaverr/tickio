@@ -7,10 +7,15 @@ import {
   getPreferences,
   setPreferences,
 } from "utils/firebase-functions/editEvent";
+import { useContext } from "react";
+import { Store } from "reducer";
 
 const EventPreferences = (props) => {
   const [data, setData] = useState({});
   const [finished, setFinished] = useState(false);
+  const { state } = useContext(Store);
+
+  console.log(state);
 
   useEffect(() => {
     getPreferences(props.match.params.id).then((res) => {

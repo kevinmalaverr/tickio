@@ -3,11 +3,7 @@ import React from "react";
 export const Store = React.createContext();
 
 export const defStore = {
-  user: {
-    displayName: "",
-    uid: "",
-    profilePhoto: "",
-  },
+  user: null,
   events: [{ eid: "", name: "", date: "" }],
 
   actualProject: {

@@ -7,3 +7,4 @@ export { default as FormEvent } from "./FormEvent";
 export { default as Register } from "./Register";
 export { default as EventPreferences } from "./EventPreferences";
 export { default as EventSettings } from "./EventSettings";
+export { default as UserSettings } from "./UserSettings";

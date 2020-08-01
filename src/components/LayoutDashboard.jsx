@@ -1,30 +1,34 @@
 import React from "react";
-import { useEffect, useState, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { Switch, Route } from "react-router-dom";
-import { Dashboard, EventHome, NotFound } from "pages";
+import { Dashboard, EventHome, NotFound, UserSettings } from "pages";
 import MenuDashboard from "./MenuDashboard";
 import HeaderDashboard from "./HeaderDashboard";
 import Autentication from "utils/firebase-functions/autentication";
 import { EventPreferences } from "pages";
-
 import { Store, reducer, defStore } from "reducer";
 
 const LayoutDashboard = (props) => {
-  const [user, setUser] = useState(false);
-  const currentEvent = props.match.params.id;
   const [state, dispatch] = useReducer(reducer, defStore);
 
   useEffect(() => {
     const auth = Autentication.getInstance();
     auth.listen((user) => {
       if (user) {
-        setUser(user);
-        console.log(user);
+        dispatch({
+          type: "SET_USER",
+          value: { ...user },
+        });
       } else {
-        alert("shouls login");
-        props.history.push("/login");
+        // TODO: gestionar si no hay usuario
       }
     });
+    return () => {
+      dispatch({
+        type: "SET_USER",
+        value: null,
+      });
+    };
   }, []);
 
   const compare = () => {
@@ -40,26 +44,33 @@ const LayoutDashboard = (props) => {
         {compare() ? (
           <div></div>
         ) : (
-          <MenuDashboard currentEvent={currentEvent} />
+          <MenuDashboard currentEvent={props.match.params.id} />
         )}
 
         <div className="content">
-          <HeaderDashboard
-            history={props.history}
-            user={user}
-            currentEvent={currentEvent}
-          />
-          {user ? (
-            <Switch>
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route exact path="/dashboard/:id" component={EventHome} />
-              <Route
-                exact
-                path="/dashboard/:id/preferences"
-                component={EventPreferences}
+          {state.user ? (
+            <>
+              <HeaderDashboard
+                history={props.history}
+                user={state.user}
+                currentEvent={props.match.params.id}
               />
-              <Route component={NotFound} />
-            </Switch>
+              <Switch>
+                <Route exact path="/dashboard" component={Dashboard} />
+                <Route
+                  exact
+                  path="/dashboard/user-settings"
+                  component={UserSettings}
+                />
+                <Route exact path="/dashboard/:id" component={EventHome} />
+                <Route
+                  exact
+                  path="/dashboard/:id/preferences"
+                  component={EventPreferences}
+                />
+                <Route component={NotFound} />
+              </Switch>
+            </>
           ) : null}
           <footer className="footer-dashboard f-small">
             <p>

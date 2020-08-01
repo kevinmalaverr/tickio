@@ -6,17 +6,18 @@ import { Modal } from "components";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import Event from "utils/firebase-functions/event";
-
+import { Store } from "reducer";
 import CreateNewEvent from "../components/CreateNewEvent";
+import { useContext } from "react";
 
 const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const [eventList, setEventList] = useState([]);
+  const { state } = useContext(Store);
 
   useEffect(() => {
-    const user = firebase.auth().currentUser;
     const event = new Event();
-    event.getEvents(user.uid).then((list) => setEventList(list));
+    event.getEvents(state.user.uid).then((list) => setEventList(list));
 
     return () => {
       setEventList([]);
