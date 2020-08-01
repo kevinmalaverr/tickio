@@ -1,21 +1,17 @@
-import React from 'react'
-import './Loader.scss'
+import React from "react";
 
 const Loader = () => {
   return (
     <div className="loader-container">
-
       <div className="loader-content">
-      <div className="loader">
-        <div className="circle-1"></div>
-        <div className="circle-2"></div>
-        <div className="circle-3"></div>
+        <div className="loader">
+          <div className="circle-1"></div>
+          <div className="circle-2"></div>
+          <div className="circle-3"></div>
+        </div>
       </div>
-      </div>
-      
     </div>
+  );
+};
 
-  )
-}
-
-export default Loader
+export default Loader;

@@ -1,5 +1,4 @@
 import React from "react";
-import "./EventCard.scss";
 import { Link } from "react-router-dom";
 
 const EventCard = (props) => {

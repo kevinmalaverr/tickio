@@ -15,11 +15,9 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
 // lazy load components ========================================
 const Home = lazy(() => import("pages/Home"));
-const Login = lazy(() => import("pages/Login/Login"));
+const Login = lazy(() => import("pages/Login"));
 const FormEvent = lazy(() => import("pages/FormEvent"));
-const LayoutDashboard = lazy(() =>
-  import("components/LayoutDashboard/LayoutDashboard")
-);
+const LayoutDashboard = lazy(() => import("components/LayoutDashboard"));
 
 const App = () => (
   <BrowserRouter>

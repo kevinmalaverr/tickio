@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import { useState, useContext } from "react";
 import * as firebase from "firebase/app";
 import "firebase/firebase-firestore";
-import "./EventHome.scss";
-import { Field } from "components/_common";
+import { Field } from "components";
 import { Link } from "react-router-dom";
 import { Store } from "reducer";
 

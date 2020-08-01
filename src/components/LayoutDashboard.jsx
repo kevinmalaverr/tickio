@@ -1,12 +1,11 @@
 import React from "react";
 import { useEffect, useState, useReducer } from "react";
-import "./LayoutDashboard.scss";
 import { Switch, Route } from "react-router-dom";
 import { Dashboard, EventHome, NotFound } from "pages";
 import MenuDashboard from "./MenuDashboard";
 import HeaderDashboard from "./HeaderDashboard";
 import Autentication from "utils/firebase-functions/autentication";
-import EventPreferences from "pages/EventPreferences/EventPreferences";
+import { EventPreferences } from "pages";
 
 import { Store, reducer, defStore } from "reducer";
 

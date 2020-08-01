@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { logo_dark } from "images";
-import "./Home.scss";
 import { Header } from "components";
-import { Field } from "components/_common";
+import { Field } from "components";
 
 function animarElementos(elementos) {
   window.addEventListener("scroll", function () {

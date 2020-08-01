@@ -1,5 +1,4 @@
 import React from "react";
-import "./EditionCard.scss";
 
 const EditionCard = (props) => {
   const { children, onedit, setOnedit, save, title } = props;

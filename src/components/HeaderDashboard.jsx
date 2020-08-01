@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ProfilePhoto } from "components/_common";
+import { ProfilePhoto } from "components";
 import { logo } from "images";
 import { default_user_photo } from "images";
 

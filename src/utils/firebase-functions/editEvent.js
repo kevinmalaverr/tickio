@@ -1,7 +1,6 @@
 import * as firebase from "firebase/app";
 import "firebase/firebase-firestore";
 import "firebase/firebase-storage";
-import Requirements from "pages/EventPreferences/Requirements";
 
 export function editApperance() {}
 

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Login.scss";
 import { logo } from "images";
-import { Button } from "components/_common";
-import { Field } from "components/_common";
+import { Field } from "components";
 import validator from "validator";
 import Autentication from "utils/firebase-functions/autentication";
 
@@ -128,9 +126,9 @@ const Login = (props) => {
             <i className="material-icons">lock</i>
           </Field>
         </form>
-        <Button color="primary" click={handleClick}>
+        <button color="primary" click={handleClick}>
           Sign In
-        </Button>
+        </button>
       </div>
 
       <p className="c-white">Dont have an account?</p>

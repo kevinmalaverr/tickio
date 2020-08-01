@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Field } from "components/_common";
-import Event from "utils/event";
+import { Field } from "components";
+import Event from "utils/firebase-functions/event";
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import { generateEventId, safeForEventName } from "utils/generateEventId";
+import {
+  generateEventId,
+  safeForEventName,
+} from "utils/algorithms/generateEventId";
 import { useHistory } from "react-router-dom";
 
 const CreateNewEvent = (props) => {

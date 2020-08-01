@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../Login/Login.scss";
 import { logo } from "images";
-import { Button } from "components/_common";
-import { Field } from "components/_common";
+import { Field } from "components";
 import validator from "validator";
 import Autentication from "utils/firebase-functions/autentication";
 
@@ -116,9 +114,9 @@ const Register = (props) => {
             <i className="material-icons">lock</i>
           </Field>
         </form>
-        <Button color="primary" click={handleClick}>
+        <button color="primary" click={handleClick}>
           Register
-        </Button>
+        </button>
       </div>
 
       <div className="form-bottom">

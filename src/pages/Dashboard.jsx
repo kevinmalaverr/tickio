@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import "./Dashboard.scss";
 import { EventCard } from "components";
-import { ProfilePhoto, Button } from "components/_common";
+import { ProfilePhoto } from "components";
 import { Modal } from "components";
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import Event from "utils/event";
+import Event from "utils/firebase-functions/event";
 
 import CreateNewEvent from "../components/CreateNewEvent";
 

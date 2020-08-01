@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Selector, Field } from "components/_common";
+import { Selector, Field } from "components";
 import { EditionCard, Loader } from "components";
-import "./EventPreferences.scss";
-import Appearance from "./Appearance";
-import Requirements from "./Requirements";
+import { Appearance } from "components";
+import { Requirements } from "components";
 import {
   getPreferences,
   setPreferences,
